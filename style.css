@@ -16,6 +16,24 @@
   --Ncolor:#2563ab; 
   --soft:#2EA1c9; 
   --foot:#2EA1C9;
+
+
+--color-primary: #6f6af8; 
+--color-primary-light: hsl(242, 91%, 69%, 18%); 
+--color-primary-variant: #5854c7; 
+--color-red: #da0f3f; 
+--color-red-light: hsl(346, 87%, 46%, 15%); 
+--color-green: #00c476; 
+--color-green-light: hsl(156, 100%, 38%, 15%); 
+--color-grey-900: #1e1e66; 
+--color-grey-700: #2d2b7c; 
+--color-grey-300: rgba(242, 242, 254, 0.3); 
+--color-grey-100: rgba(242, 242, 254, 0.7); 
+--color-white: #f2f2fe; 
+--color-bg: #0f0f3e;
+
+
+
 }
 *{
     box-sizing:border-box
