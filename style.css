@@ -191,7 +191,7 @@ font-size: larger;
 }
 
 .panel{
-	flex:1;
+	  flex:1;
     background-color:rgb(from var(--card) r g b / 0.6); 
     border:1px solid var(--stroke); 
     border-radius:18px; 
@@ -257,6 +257,45 @@ font-size: larger;
 .tools .btn{
     margin-top: 5px;
 }
+/*  ---------- data part styling -------------*/
+.data{
+  display: flex;
+}
+
+h2{
+  margin-bottom: 0;
+}
+
+.img_only{
+  width: 35%;
+}
+.img_only img{
+  width: 100%;
+  border-radius: 10px;
+}
+.grid.wrapper{
+    display: grid;
+}
+
+.wrapper{
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+  align-items: center;
+}
+.text{
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+hr{
+  opacity: 0.2;
+}
+
+/*----------------------------------------------------*/
 
 .card_project{
     border:2px solid var(--bg);
