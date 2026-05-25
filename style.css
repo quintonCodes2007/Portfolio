@@ -479,6 +479,26 @@ hr{
         font-size: 0.9rem;
     }
 }
+
+  /* responsiveness of data section */
+.wrapper{
+  display: grid;
+  padding: 0%;
+  gap: 0;
+}
+.text {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+.img_only {
+  width: 100%; 
+}
+
+
+  /* ----------------------------------- */
   
   /* Show hamburger menu on mobile */
   .manu {
@@ -573,15 +593,6 @@ hr{
     grid-template-columns: 1fr;
     gap: 12px;
     margin-top: 8px;
-  }
-  .gallery-grid {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .gallery-grid img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 8px;
   }
   .card_project img {
     height: 110px;
