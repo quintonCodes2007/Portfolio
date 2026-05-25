@@ -471,6 +471,11 @@ hr{
         right: 15px;
     }
 
+  .tools {
+    display: grid;
+    gap: 10px;
+}
+
     .card_minimal h3 {
         font-size: 1.2rem;
     }
