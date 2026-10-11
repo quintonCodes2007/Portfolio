@@ -40,6 +40,84 @@ function draw(){
   requestAnimationFrame(draw);
 }
 draw();
+//scroll animation
+document.addEventListener("DOMContentLoaded", () => {
+    const marquee = document.querySelector(".services-marquee");
+    const track = document.querySelector(".services-track");
+    const originalGroup = document.querySelector(".services-group");
+
+    if (!marquee || !track || !originalGroup) return;
+
+    let position = 0;
+    let lastTime = null;
+    let paused = false;
+
+    const speed = 50; // Pixels per second
+
+    function setupMarquee() {
+        // Remove previous clones
+        track.querySelectorAll(".services-group:not(:first-child)")
+            .forEach(group => group.remove());
+
+        // Measure original group
+        const groupWidth = originalGroup.getBoundingClientRect().width;
+        const containerWidth = marquee.getBoundingClientRect().width;
+
+        if (!groupWidth) return;
+
+        // Create enough copies to cover the entire visible area
+        // plus one extra group for seamless scrolling
+        const copiesNeeded = Math.ceil(containerWidth / groupWidth) + 2;
+
+        for (let i = 0; i < copiesNeeded; i++) {
+            const clone = originalGroup.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            track.appendChild(clone);
+        }
+
+        // Keep position within one group
+        position = position % groupWidth;
+        track.style.transform = `translate3d(${position}px, 0, 0)`;
+    }
+
+    marquee.addEventListener("mouseenter", () => {
+        paused = true;
+    });
+
+    marquee.addEventListener("mouseleave", () => {
+        paused = false;
+    });
+
+    function animate(timestamp) {
+        if (lastTime === null) lastTime = timestamp;
+
+        const deltaTime = Math.min((timestamp - lastTime) / 1000, 0.05);
+        lastTime = timestamp;
+
+        if (!paused) {
+            const groupWidth = originalGroup.getBoundingClientRect().width;
+
+            if (groupWidth > 0) {
+                position -= speed * deltaTime;
+
+                // Reset exactly when one group has passed
+                if (position <= -groupWidth) {
+                    position += groupWidth;
+                }
+
+                track.style.transform =
+                    `translate3d(${position}px, 0, 0)`;
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    setupMarquee();
+    window.addEventListener("resize", setupMarquee);
+    requestAnimationFrame(animate);
+});
+
 
 // Mobile menu toggle - FIXED VERSION
 const navItems = document.querySelector('.links');

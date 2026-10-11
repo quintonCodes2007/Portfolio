@@ -305,6 +305,33 @@ hr{
 }
 
 /*----------------------------------------------------*/
+.services-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.services-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.services-group {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    width: max-content;
+    flex-shrink: 0;
+}
+
+.services-group .card_minimal {
+    width: 300px;
+    flex: 0 0 300px;
+    box-sizing: border-box;
+    margin: 0;
+}
+/*----------------------------------------------------*/
 
 .card_project{
     border:2px solid var(--bg);
