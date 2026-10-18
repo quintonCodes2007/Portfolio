@@ -466,6 +466,37 @@ hr{
     transform: scale(1.2)
 }
 
+#contact-me{
+  margin-bottom: 10px;
+}
+
+input, textarea{
+    background: var(--card);
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.name-email-field{
+  display: grid;
+ grid-template-columns:1fr 1fr;
+  gap: 10px;
+}
+
+textarea{
+  height: 100px;
+  width: 100%;
+}
+
+.ctn-btn{
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+}
+
 
 
 @media (max-width: 900px) {
